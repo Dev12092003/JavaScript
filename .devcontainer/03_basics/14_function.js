@@ -55,6 +55,7 @@
 // console.log(calculatecartprice(200,300,500));
 
 
+// like shopping caart user addd the item we dont know then we use this type of function 
 function calculatecartprice(val1,val2,...num1){  // ..rest operator/spreadoperator
     return num1
 }
