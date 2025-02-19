@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3 is here </title>
+</head>
+<body style="background-color: #212121; color: white;">
+    
+</body>
+<script>
+    const div=document.createElement('div')
+    console.log(div);
+    div.className="main"
+    div.id=Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title","generat title")
+    div.style.backgroundColor="red"
+    div.style.padding="12px"
+    //div.innerText="he how" this is not recommndet use down 
+    const addtext=document.createTextNode("this is crate text from script")
+    div.appendChild(addtext)
+
+    document.body.appendChild(div) // this is for call what we creat using script 
+</script>
+</html>
