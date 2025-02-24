@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+<div style="height: 500px; ">
+    <button id="btn">Show</button>
+    <img src="" alt="" id="img" style="object-fit: contain;">
+    <h3>followers <span id="followers"></span></h3>
+</div>
+</body>
+<script>
+    const requestUrl='https://api.github.com/users/dev12092003'
+    const xhr=new XMLHttpRequest()
+    xhr.open('GET',requestUrl);
+
+    const showbtn=document.querySelector('#btn')
+    let img=document.querySelector('#img')
+    let p=document.querySelector('#followers')
+
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            const data=JSON.parse(this.responseText);
+            showbtn.addEventListener('click',function(){
+                img.src=data.avatar_url    
+                p.innerText=data.followers
+            })
+        }
+    }
+    
+    
+    xhr.send()
+
+</script>
+</html>

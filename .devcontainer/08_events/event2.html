@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hee </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const saydev=function(){
+        console.log("Dev");
+    }
+    setTimeout(saydev,2000)
+
+    const changetext= function(){
+        document.querySelector('h1').innerHTML="learing JS"
+    }
+    const changeme=setTimeout(changetext,2000)
+
+    // clearTimeout(changeme) // this is use for stop the set time out 
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        console.log("stop");
+        clearTimeout(changeme)
+    })
+</script>
+</html>
