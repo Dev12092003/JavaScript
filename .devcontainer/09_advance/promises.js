@@ -102,7 +102,11 @@ consumPromiseFive()
 
 // 
 fetch("https://api.github.com/users/dev12092003").then((response)=>{
+    console.log("this is the fetch response");
+    console.log(response);
     return response.json()
 }).then((data)=>{
     console.log(data);
 }).catch((err)=>console.log(err))
+
+//promise 
